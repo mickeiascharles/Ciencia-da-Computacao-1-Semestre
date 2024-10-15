@@ -1,0 +1,17 @@
+#include <stdio.h>
+int numero;
+float altura;
+char nome[100];
+
+main(void){
+	printf("Digite o numero da casa/AP: ");
+	scanf("%i", &numero);
+
+	printf("Digite a altura do guarda roupa: ");
+	scanf("%f", &altura);
+	
+	printf("Digite o modelo do guarda roupa: ");
+	gets (nome);
+    system("cls");
+	printf("GUARDA-ROUPA: %s", nome);
+}
