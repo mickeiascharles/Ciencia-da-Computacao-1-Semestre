@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <locale.h> //para portugues 
+int tel[4]; //memória do telefone
+int i; //contador 
+
+main(void){
+	setlocale(LC_ALL,"portuguese");
+
+	for(i=0; i<=3; i++){	
+	printf("Insira o telefone: ");
+	scanf("%i", &tel[i]);
+	
+	//Para limpar a tela
+	system("cls");
+    }
+	//Imprimindo resultados
+	for(i=0; i<=3; i++){
+		printf ("Telefone: %i \n", tel[i]);
+	}
+}
