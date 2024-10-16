@@ -1,0 +1,12 @@
+#include <stdio.h>
+char nome[70];
+int cont;
+
+main(void){
+	for(cont=1; cont<=3; cont++){
+		printf("NOME DO CLIENTE: ");
+		fflush(stdin);
+		gets(nome);
+		sleep(2);
+	}
+}
