@@ -1,0 +1,19 @@
+//Aula de Vetores
+#include<stdio.h>
+#include<locale.h>
+//Substituindo o contador para i
+int idade[3]; i;
+
+main(void){
+	setlocale(LC_ALL,"portuguese");
+	//Para contar 3 vezes
+	for(i=0; i<3; i++){
+	    printf("Digite a idade: ");
+	    scanf("%i", &idade[i]);
+	}
+	//Para limpar a tela
+	system("cls");
+	for(i=0; i<3; i++){
+		printf("Idade: %i \n", idade[i]);
+	}
+}
