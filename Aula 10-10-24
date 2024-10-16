@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <locale.h>
+int cont=0;
+float p1,p2,media;
+
+ main(void){
+ setlocale(LC_ALL,"Portuguese");
+    while (cont<=3){
+	
+ 	//solicita a nota
+ 	printf("P1: ");
+ 	scanf ("%f", &p1);
+ 	printf("P2: ");
+ 	scanf ("%f", &p2);
+ 	
+ 	//Calcula o total
+ 	media = (p1 + p2)/2;
+ 	system("cls");
+ 	
+ 	//Imprime a média
+ 	printf("Média: %2.f \n", media);
+ 	
+ 	cont++;	
+ }
+ }
