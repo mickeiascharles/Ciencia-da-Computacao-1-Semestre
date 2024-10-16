@@ -1,0 +1,27 @@
+#include <stdio.h>
+float nota1, nota2, media;
+int cont;
+
+main(void){
+	for(cont=1; cont<=3; cont++){
+	
+	//Solicita as notas
+	printf("Digite a primeira nota = ");
+	scanf("%f", &nota1);
+	printf("Digite a segunda nota = ");
+	scanf("%f", &nota2);
+	
+	//Calcula a média
+	media = (nota1 + nota2) /2;
+	
+	//Limpa a tela
+	system("cls");
+	
+	//Imprimindo os resultados
+	printf("NOTA 1 = %.2f \n", nota1);
+	printf("NOTA 2 = %.2f \n", nota2);
+	printf("MEIDA = %2.f \n", media);
+	system("pause");
+	system("cls");
+}
+}
