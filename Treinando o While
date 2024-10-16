@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <locale.h>
+int cont=1;
+char nome_cri[100], nome_pais[100];
+
+
+main (void){
+setlocale(LC_ALL,"");
+	while(cont <=2){
+		
+		//Solicita o nome do pai 
+		printf("Nome (PAIS): ");
+		fflush(stdin);
+		gets(nome_pais);
+		
+		//Solicita o nome do filho
+		printf("Nome (criança): ");
+		fflush(stdin);
+		gets(nome_cri);
+		
+		//Imprime o Nome do pai e do filho
+		system("cls");
+		printf ("Nome da criança : %s \n", nome_cri);
+		printf ("Nome dos pais : %s", nome_pais);
+		sleep(3);
+		system("cls");
+		
+		cont++;
+	}
+}
