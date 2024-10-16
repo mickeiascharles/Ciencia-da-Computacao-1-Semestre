@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <locale.h>
+char nome_peca[70];
+int cont;
+
+main (void){
+	for(cont=1; cont<=3; cont++){
+    setlocale(LC_ALL,"");
+	printf("Digite o nome das peças: ");
+	gets (nome_peca); 
+}
+}
