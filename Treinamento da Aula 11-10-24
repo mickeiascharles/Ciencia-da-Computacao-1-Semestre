@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<locale.h>
+float n1[4], n2[4], media[4];
+int i;
+
+main(void){
+	setlocale(LC_ALL, "portuguese");
+	
+	    //CADASTRO
+        for(i=0; i<=3; i++){
+        printf("%i Estudante\n", i);
+		printf("Insira a primeira nota: ");
+		scanf("%f", &n1[i]);
+		printf("Insira a segunda nota: ");
+		scanf("%f", &n2[i]);
+		media[i] = (n1[i] + n2[i])/ 2; //CALCULO
+		system("cls"); //LIMPA A TELA
+	}
+		
+		//IMPRESSÃO
+		for(i=0; i<=2; i++){
+			printf("%i Estudante\n", i);
+		    printf("Primeira nota: %.2f \n", n1[i]);
+		    printf("Segunda nota: %.2f \n", n2[i]);
+		    printf("Média: %.2f \n\n", media[i]);
+	}	
+}
