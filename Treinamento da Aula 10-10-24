@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <locale.h>
+char opcao = 's';
+char nome[50];
+
+main(void){
+	setlocale(LC_ALL, "Portuguese");
+	while(opcao== 's'){
+		printf("Cadastrar funcionário(a): ");
+		fgets(nome, 50, stdin);
+		printf("%s\n", nome);
+		
+		printf("Deseja cafastrar outro(a) funcionário(a)? [s]ou[n]");
+		gets(&opcao);
+		
+		system("cls");
+}
+    return 0;
+}
