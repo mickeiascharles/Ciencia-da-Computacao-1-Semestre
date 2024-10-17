@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <locale.h>
+char local[3][100];
+float valor[3];
+int i;
+
+main(void){
+setlocale(LC_ALL, "portuguese");
+    // i= começa contar;    i<= até onte vai contar;    i++ = para repetir mais um. 
+    for(i=1; i<=2; i++){
+    	
+    //Pede o destino 
+	printf("Para onde gostaria de viajar: ");
+	fflush(stdin);
+	gets(local[i]);
+	
+	//Pede o preço
+	printf("Insira o preço: ");
+	scanf("%f", &valor[i]);
+	}
+	
+	system("cls");
+	
+	 for(i=1; i<=2; i++){
+	 	// %s para mais de uma palavra na memória char
+	 	printf("Local = %s \n", local[i]);
+	 	printf("R$ = %.2f \n\n", valor[i]); //.2 para imprimir apenas dois zeros
+	 }
+}
