@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <locale.h>
+char name[100], tel[20], end[100], mail[80], prod[3][20];
+float valor[3], soma = 0; //Soma igual a zero pra não ser contabilizado um número a mais
+int i;
+
+void cadastro_do_cliente(){
+setlocale(LC_ALL,"portuguese");
+	printf("CADASTRO\n");
+	printf("Digite o nome: ");
+	fflush(stdin);
+	gets(name);
+	printf("Telefone: ");
+	scanf("%s", tel);
+	printf("Endereço: ");
+	fflush(stdin);
+	gets(end);
+	printf("EMAIL: ");
+	fflush(stdin);
+	gets(mail);
+	system("cls");
+}
+void cadastrar_produto(){
+    for(i = 0; i < 3; i++){ //Ao invés de '<= 3' tirando o '=' para ser contabilizado a partir do zero
+	printf("Produto: \n", i + 1);
+	
+	fflush(stdin);
+	gets(prod[i]);
+	
+	printf("Preço: \n");
+	scanf("%f", &valor[i]);
+}
+}
+void soma_dos_produtos(){
+	soma = 0;
+    for(i = 0; i < 3; i++){
+	soma += valor[i]; //Somando valor por valor
+}
+}
+void imprimir(){
+setlocale(LC_ALL,"portuguese");
+	printf("DADOS DO CLIENTE\n");
+	printf("Nome: %s\n", name);
+	printf("Telefone: %s\n", tel);
+	printf("Endereço: %s\n", end);
+	printf("EMAIL: %s\n", mail);
+	
+	printf("COMPRAS\n");
+    for(i = 0; i < 3; i++){
+    	setlocale(LC_ALL,"portuguese");
+	    printf("Produto: %s\n", prod[i]);
+	    printf("Valor: %2.f\n", valor[i]);
+}
+    printf("TOTAL = %2.f\n", soma);
+}
+int main(){
+	cadastro_do_cliente();
+	cadastrar_produto();
+	soma_dos_produtos();
+	imprimir();
+	sleep(5);
+	
+	printf("PROGRAMA FINALIZADO");
+	sleep(2);
+	system("cls");
+	
+	return 0;
+}
