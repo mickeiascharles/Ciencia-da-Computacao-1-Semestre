@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <locale.h>
-#include <string.h>
-
 int senha = 123;
 int login, opcao, opcaocarro;
 char nome[100], end[150], cor[10], forma_de_pagamento[35], produto[150], tel[20], quant[5];
 
 void iniciar(){
     setlocale(LC_ALL, "portuguese");
-    printf("CONCESSIONÁRIA BRASÍLIA\n");
+    printf("CONCESSIONÁRIA MICKEIAS\n");
     sleep(2);
     system("cls");  
 }
@@ -49,19 +47,29 @@ void cadastrar(){
     printf("Nome: %s\n", nome);
     printf("Telefone: %s\n", tel);
     printf("Endereço: %s\n", end);
-    sleep(2);
+    system("pause");
     system("cls");
 }
 
 void compra_de_carro(){
-
+    setlocale(LC_ALL, "portuguese");
     printf("Escolha o carro:\n");
     printf("1 - Sedan\n"); 
     printf("2 - SUV\n");
     printf("3 - Hatch\n"); 
     printf("Digite a opção: ");
     scanf("%d", &opcaocarro);
-    getchar(); 
+    while(opcaocarro >3 ){
+    	printf("Opção inválida! tente novamente.");
+    	sleep(1);
+    	system("cls");
+    	printf("Escolha o carro:\n");
+        printf("1 - Sedan\n"); 
+        printf("2 - SUV\n");
+        printf("3 - Hatch\n"); 
+        printf("Digite a opção: ");
+        scanf("%d", &opcaocarro);	
+	} 
 
     printf("Digite a cor do carro: ");
     fflush(stdin);
@@ -80,17 +88,18 @@ void compra_de_carro(){
         case 2: printf("SUV\n"); break;
         case 3: printf("Hatch\n"); break;
 	    default:
-                printf("Opção inválida! Tente novamente.\n");
-                break;
+            printf("Opção inválida! \n");
+            break;
     }
+  
     printf("Cor: %s\n", cor);
     printf("Forma de pagamento: %s\n", forma_de_pagamento);
-    sleep(3);
+    system("pause");
     system("cls");
 }
 
-
 void compra_de_acessorio(){
+	setlocale(LC_ALL, "portuguese");
     printf("VENDA DE ACESSÓRIO\n");
     sleep(1);
 
@@ -104,31 +113,8 @@ void compra_de_acessorio(){
     system("cls");
     printf("Produto: %s\n", produto);
     printf("Quantidade: %s\n", quant);
-    sleep(3);
+    system("pause");
     system("cls");
-}
-
-void imprimindo_resultados(){
-    printf("VENDA CONCLUÍDA \n");
-    printf("Nome: %s\n", nome);
-    printf("Telefone: %s\n", tel);
-    printf("Endereço: %s\n", end);
-    printf("Modelo do carro: ");
-     switch(opcaocarro) {
-        case 1: printf("Sedan\n"); break;
-        case 2: printf("SUV\n"); break;
-        case 3: printf("Hatch\n"); break;
-    }
-    printf("Cor: %s\n", cor);
-    printf("Forma de pagamento: %s\n", forma_de_pagamento);
-    printf("COMPRA ADICIONAL\n");
-    printf("Produto: %s\n", produto);
-    printf("Quantidade: %s\n", quant);
-    sleep(4);
-    system("cls");
-    printf("VENDA FINALIZADA\n");
-    sleep(2);
-	system("cls");
 }
 
 int main(){
@@ -139,8 +125,7 @@ int main(){
         printf("1 - Cadastro cliente\n");
         printf("2 - Compra de carro\n");
         printf("3 - Compra de acessório\n");
-        printf("4 - Comprovante\n");
-        printf("5 - Fechar programa\n");
+        printf("4 - Fechar programa\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
 
@@ -159,18 +144,15 @@ int main(){
                 break;
             case 4:
             	system("cls");
-                imprimindo_resultados();
-                break;
-            case 5:
-            	system("cls");
             	printf("PROGRAMA FINALIZADO!");
             	sleep(1);
             	system("cls");
             	break;
             default:
+            	system("cls");
                 printf("Opção inválida! Tente novamente.\n");
                 break;
         }
-    } while (opcao != 5);
+    } while (opcao != 4);
     return 0;
 }
