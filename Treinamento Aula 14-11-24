@@ -1,0 +1,35 @@
+#include <stdio.h>
+struct concurso{
+	char nome[100];
+	float p1, p2, p3, media;
+}candidato[2];
+
+int i;
+void resultado(){
+	for(i=1; i<=2; i++){
+	printf("Nome do candidato: ");
+	fflush(stdin);
+	gets(candidato[i].nome);
+	printf("Nota primeira prova: ");
+	fflush(stdin);
+	scanf("%f", &candidato[i].p1);
+	printf("Nota segunda prova: ");
+	fflush(stdin);
+	scanf("%f", &candidato[i].p2);
+	printf("Nota terceira prova: ");
+	fflush(stdin);
+	scanf("%f", &candidato[i].p3);
+	candidato[i].media = (candidato[i].p1 + candidato[i].p2 + candidato[i].p3) /2;
+	system("cls");
+	}
+	for(i=1; i<=2; i++){
+	printf("Nome do candidato: %s\n", candidato[i].nome);
+	printf("Resultado: %2.f\n", candidato[i].media);
+	system("pause");
+	}
+	
+}
+
+int main(){
+	resultado();
+}
