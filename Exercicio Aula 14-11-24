@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <locale.h>
+struct escola{
+	float n1, n2, media;
+}estudante [4];
+
+int i; //contador
+void media(){
+setlocale(LC_ALL,"portuguese");
+    //CADASTRAR
+    for(i=1; i<=4; i++){
+	printf("Primeira nota: ");
+	fflush(stdin);
+	scanf("%f", &estudante[i].n1);
+	printf ("Segunda nota: ");
+	fflush(stdin);
+	scanf("%f", &estudante[i].n2);
+	estudante[i].media = (estudante[i].n1 + estudante[i].n2) /2;
+	system("cls");
+	}
+	//IMRPIMIR
+	for(i=1; i<=4; i++){
+	printf("Média: %2.f\n", estudante[i].media);
+	system("pause");
+	}
+	
+}
+int main(){
+	media();
+}
