@@ -1,0 +1,16 @@
+#include <stdio.h>
+struct estado{
+	char nome[50];
+}
+int i;
+int main(){
+	struct estado cidade [3];
+	for(i=1; i<=3; i++){
+		printf("Cidade: ");
+		fflush(stdin);
+		fgets(cidade[i], nome, sizeof(cidade[i].nome), stdin);
+	}
+	for(i=1; i<=3; i++){
+		printf("CIDADE CADASTRADA: %s\n", cidade[i].nome);
+	}
+}
