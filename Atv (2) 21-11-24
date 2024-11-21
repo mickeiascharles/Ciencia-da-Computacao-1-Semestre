@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+setlocale(LC_ALL, "portuguese");
+	int quantidade = 10;
+	double salgado = 20.50;
+	char classe = 'a';
+	
+	int *p_quantidade = &quantidade;
+	double *p_salgado = &salgado;
+	char *p_classe = &classe;
+	
+	printf("Endereço = %i - Valor = %i\n", p_quantidade, *p_quantidade);
+	printf("Endereço = %i - Valor = %.2f\n", p_salgado, *p_salgado);
+	printf("Endereço = %i - Valor = %c\n", p_classe, *p_classe);
+}
