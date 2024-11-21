@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+setlocale(LC_ALL, "portuguese");
+	char nome[100];
+	
+	printf("Digite o nome completo: ");
+	fgets(nome, sizeof(nome), stdin);
+	
+	system("cls");
+	
+	char *p_nome = nome; //criando ponteiro
+	printf("Nome = %s\n", p_nome); //imprimindo 
+	}
