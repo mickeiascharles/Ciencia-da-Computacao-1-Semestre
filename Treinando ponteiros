@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(void){
+	int sapato = 37;
+	
+	int *p_sapato;
+	p_sapato = &sapato;
+	
+	printf("%i\n", *p_sapato);
+}
