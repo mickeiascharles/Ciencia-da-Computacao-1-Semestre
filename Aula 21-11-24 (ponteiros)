@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main (void){
+	int dog = 10; //criacao da mem
+	
+	int *p_dog; //criacao do ponteiro
+	p_dog = &dog; //copiar
+	
+	printf ("%i\n", *p_dog);
+}
