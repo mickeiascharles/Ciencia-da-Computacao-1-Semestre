@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <locale.h>
+
+void cad_compra(){
+char prod1[50], prod2[50];
+float preco1, preco2, total;
+	printf("Nome do produto: ");
+	fgets(prod1, sizeof(prod1), stdin);
+	printf("R$: ");
+	scanf("%f", &preco1);
+	
+	printf("Nome do produto: ");
+	fflush(stdin);
+	fgets(prod2, sizeof(prod2), stdin);
+	printf("R$: ");
+	scanf("%f", &preco2);
+	
+	system("cls");
+	
+char *p_prod1 = prod1;
+char *p_prod2 = prod2;
+float *p_preco1 = &preco1;
+float *p_preco2 = &preco2;
+	total = *p_preco1 + *p_preco2;
+float *p_total = &total;
+	
+	printf("Produto: %s", p_prod1);
+	printf("R$: %.2f\n", *p_preco1);
+	printf("Produto: %s", p_prod2);
+	printf("R$: %.2f\n", *p_preco2);
+	printf("TOTAL = %.2f\n", *p_total);
+	
+    system("pause");		
+}
+
+int main(){
+setlocale(LC_ALL,"portuguese");
+    cad_compra();
+}
