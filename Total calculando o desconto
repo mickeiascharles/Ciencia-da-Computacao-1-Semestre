@@ -1,0 +1,41 @@
+#include <stdio.h>
+char nome[3][50], *p_nome[3];
+float preco[3],*p_preco[3];
+float subtotal[3], *p_subtotal[3];
+float total, *p_total;
+int quantidade[3], *p_quantidade[3], i;
+int main(){
+	//CADASTRO
+	for(i=0; i<=2; i++){
+		printf("DIG O PRODUTO: ");
+		fflush(stdin);
+		fgets(nome[i], sizeof(nome[i]), stdin);
+		
+		printf("DIG O PRECO: ");
+		scanf("%f", &preco[i]);
+		printf("QUANTIDADE: ");
+		scanf("%i", &quantidade[i]);
+		
+		subtotal[i] = preco[i] * quantidade[i];
+		total = total + subtotal[i];
+	//PONTEIROS
+	p_nome[i] 		= nome[i];
+	p_preco[i] 		= &preco[i];
+	p_quantidade[i] = &quantidade[i];
+	p_subtotal[i] 	= &subtotal[i];
+	p_total 		= &total;
+		
+	}
+	system("cls");
+	//IMPRESSÃO
+	for(i=0; i<=2; i++){
+		printf("PRODUTO: %s", p_nome[i]);
+		printf("PRECO: %.2f\tQTID.: %i \t=%.2f\n", *p_preco[i], *p_quantidade[i], *p_subtotal[i]);
+	}
+	printf("\n\nTOTAL: %.2f", *p_total);
+}
+
+
+
+
+
